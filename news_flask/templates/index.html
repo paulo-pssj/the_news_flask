@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for new in news %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="jumbotron">
+                    <h3><a href="{{new.url}}" target="_blank"> {{new.titulo}}</a></h4>
+                    <p>{{new.descricao}}</p>
+                    <spam>Cirado em: {{new.criado_em}}</spam>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
