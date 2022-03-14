@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for new in news %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="jumbotron">
-                    <h3><a href="{{new.url}}" target="_blank"> {{new.titulo}}</a></h4>
-                    <p>{{new.descricao}}</p>
-                    <spam>Cirado em: {{new.criado_em}}</spam>
+<div class="row">
+        {% for new in news %}
+        <div class="col-sm">    
+            <div class="card" style="width: 18rem;">
+                <img src="{{ new.image }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ new.titulo }}</h5>
+                    <p class="card-text">{{ new.descricao }}</p>
+                    <a href="{{ new.url }}" target="_blank" class="btn btn-primary">Vá para Notícia</a>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 {% endblock %}
