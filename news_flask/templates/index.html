@@ -7,7 +7,11 @@
                 <img src="{{ new.image }}" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">{{ new.titulo }}</h5>
-                    <p class="card-text">{{ new.descricao }}</p>
+                    {% if new.descricao == 'None' %}
+                    <p class="card-text">Sem descrição da notícia</p>
+                    {% else %}
+                    <p class="card-text">{{ new.descricao|truncate(100, True) }}</p>
+                    {% endif %}
                     <a href="{{ new.url }}" target="_blank" class="btn btn-primary">Vá para Notícia</a>
                 </div>
             </div>

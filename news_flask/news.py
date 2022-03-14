@@ -15,7 +15,7 @@ def index():
         'autor': data['articles'][id]['author'],
         'titulo': data['articles'][id]['title'],
         'image': data['articles'][id]['urlToImage'],
-        'descricao': data['articles'][id]['description'],
+        'descricao': str(data['articles'][id]['description']),
         'criado_em': data['articles'][id]['publishedAt'],
         'url': data['articles'][id]['url']
         }
